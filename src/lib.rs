@@ -35,7 +35,6 @@ impl Config {
 }
 
 pub fn run<'a>(config: Config) -> Result<(), Box<dyn Error>> {
-
     // TODO: maybe allow to use regex
 
     let contents = fs::read_to_string(config.filename)?;
