@@ -80,7 +80,7 @@ mod tests {
     use super::*;
 
     // TODO(#6): add unit tests for run
-    // TODO: add unit tests for Config::new()
+    // TODO(#7): add unit tests for Config::new()
     // TODO: add integration tests
     // TODO: maybe move tests to separate file
 
