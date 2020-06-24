@@ -23,7 +23,7 @@ jobs:
       with:
         toolchain: nightly
         override: true
-        components: clippy, rustfmt, grcov
+        components: clippy, rustfmt #Nightly doesn't have grcov
     - name: Test
       uses: actions-rs/cargo@v1
       with:
