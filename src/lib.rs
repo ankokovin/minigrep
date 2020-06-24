@@ -35,7 +35,7 @@ impl Config {
 }
 
 pub fn run<'a>(config: Config) -> Result<(), Box<dyn Error>> {
-    // TODO: maybe allow to use regex
+    // TODO(#5): maybe allow to use regex
 
     let contents = fs::read_to_string(config.filename)?;
     let result = if config.case_sensitive {
