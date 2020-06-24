@@ -1,0 +1,10 @@
+[package]
+name = "minigrep"
+version = "0.1.0"
+authors = ["Коковин Алексей Николаевич <rycarok@gmail.com>"]
+edition = "2018"
+description = "Minigrep application from rust book"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
