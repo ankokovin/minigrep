@@ -2,7 +2,7 @@ use std::env;
 use std::error::Error;
 use std::fs;
 
-// TODO: make config an enum for extendability (example - regex)
+// TODO(#3): make config an enum for extendability (example - regex)
 pub struct Config {
     pub query: String,
     pub filename: String,
