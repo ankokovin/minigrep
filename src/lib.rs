@@ -24,7 +24,7 @@ impl Config {
         let query = args[1].clone();
         let filename = args[2].clone();
 
-        // TODO: allow to pass CASE_INSENSITIVE also from arguments
+        // TODO(#4): allow to pass CASE_INSENSITIVE also from arguments
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
         Ok(Config {
             query,
