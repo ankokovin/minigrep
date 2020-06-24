@@ -52,3 +52,5 @@ jobs:
     - name: use snitch
       id: snitch
       uses: ankokovin/snitch/action@master
+      with:
+         github-token: ${{ secrets.GITHUB_TOKEN }}
