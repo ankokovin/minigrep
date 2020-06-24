@@ -23,8 +23,7 @@ jobs:
       with:
         toolchain: nightly
         override: true
-    - name: Install Clippy and Fmt
-      run: rustup component add clippy rustfmt --toolchain nightly-x86_64-unknown-linux-gnu    
+        components: clippy, rustfmt, grcov
     - name: Test
       uses: actions-rs/cargo@v1
       with:
