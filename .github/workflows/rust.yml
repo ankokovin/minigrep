@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ master ]
 
+# TODO(#10): add timely CI checks
+
 env:
   CARGO_TERM_COLOR: always
 
@@ -13,6 +15,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    # TODO(#11): add MacOS and Windows CI runs-on
 
     steps:
     - uses: actions/checkout@v2
@@ -26,7 +29,7 @@ jobs:
       uses: actions-rs/cargo@v1
       with:
         command: test
-        args: --all-features --no-fail-fast  # Customize args for your own needs
+        args: --all-features --no-fail-fast 
       env:
         CARGO_INCREMENTAL: '0'
         RUSTFLAGS: '-Zprofile -Ccodegen-units=1 -Cinline-threshold=0 -Clink-dead-code -Coverflow-checks=off -Cpanic=abort -Zpanic_abort_tests'
@@ -38,6 +41,8 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         path-to-lcov: ${{ steps.coverage.outputs.report }}
+    # TODO(#12): generate warning on coverage drop
+    # TODO(#13): research posibilities on autorunning scripts that change code: e.g. snitch
     - uses: actions-rs/cargo@v1
       with:
         command: clippy
