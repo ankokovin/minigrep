@@ -2,6 +2,7 @@ use std::env;
 use std::error::Error;
 use std::fs;
 
+// TODO: make config an enum for extendability (example - regex)
 pub struct Config {
     pub query: String,
     pub filename: String,
@@ -22,6 +23,8 @@ impl Config {
 
         let query = args[1].clone();
         let filename = args[2].clone();
+
+        // TODO: allow to pass CASE_INSENSITIVE also from arguments
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
         Ok(Config {
             query,
@@ -32,6 +35,9 @@ impl Config {
 }
 
 pub fn run<'a>(config: Config) -> Result<(), Box<dyn Error>> {
+
+    // TODO: maybe allow to use regex
+
     let contents = fs::read_to_string(config.filename)?;
     let result = if config.case_sensitive {
         search(&config.query, &contents)
@@ -73,6 +79,12 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a st
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    // TODO: add unit tests for run
+    // TODO: add unit tests for Config::new()
+    // TODO: add integration tests
+    // TODO: maybe move tests to separate file
+
     #[test]
     fn one_result() {
         let query = "duct";
