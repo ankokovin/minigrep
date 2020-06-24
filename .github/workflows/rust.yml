@@ -26,4 +26,11 @@ jobs:
     - uses: actions-rs/cargo@v1
       with:
           command: fmt
-          args: -- --check
+          args: -- --check 
+    - uses: codecov/codecov-action@v1.0.7
+      with:
+        name: coverage
+        file: ./coverage.xml
+        flags: unittests
+        #env_vars: # optional
+        fail_ci_if_error: true
