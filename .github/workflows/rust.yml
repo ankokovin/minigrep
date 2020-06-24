@@ -21,8 +21,7 @@ jobs:
         toolchain: nightly
         override: true
     - name: Install Clippy
-      with:
-        command: rustup component add clippy --toolchain nightly-x86_64-unknown-linux-gnu    
+      run: rustup component add clippy --toolchain nightly-x86_64-unknown-linux-gnu    
     - name: Test
       uses: actions-rs/cargo@v1
       with:
