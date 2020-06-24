@@ -82,7 +82,7 @@ mod tests {
     // TODO(#6): add unit tests for run
     // TODO(#7): add unit tests for Config::new()
     // TODO(#8): add integration tests
-    // TODO: maybe move tests to separate file
+    // TODO(#9): maybe move tests to separate file
 
     #[test]
     fn one_result() {
