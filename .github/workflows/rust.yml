@@ -51,4 +51,4 @@ jobs:
         args: -- --check
     - name: use snitch
       id: snitch
-      uses: ankokovin/snitch/action
+      uses: ankokovin/snitch/action@master
